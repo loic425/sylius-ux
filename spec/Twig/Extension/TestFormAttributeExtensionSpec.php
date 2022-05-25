@@ -21,7 +21,7 @@ use Tests\Sylius\Ux\Dummy\SampleInterface;
 use Twig\Extension\ExtensionInterface;
 use Twig\TwigFunction;
 
-final class TestHtmlAttributeExtensionSpec extends ObjectBehavior
+final class TestFormAttributeExtensionSpec extends ObjectBehavior
 {
     function let(): void
     {
