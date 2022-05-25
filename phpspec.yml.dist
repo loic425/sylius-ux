@@ -1,0 +1,6 @@
+suites:
+    Package:
+        namespace: Sylius\Ux
+        psr4_prefix: Sylius\Ux
+        src_path: src
+        spec_path: .
