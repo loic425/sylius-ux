@@ -42,3 +42,7 @@ jobs:
                 name: Install dependencies
                 run: |
                     composer update ${{ matrix.composer-flags }} --no-scripts
+
+            -
+                name: Run Phpspec tests
+                run: vendor/bin/phpspec run --no-interaction

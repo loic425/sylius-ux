@@ -11,7 +11,7 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Ux\Twig;
+namespace Sylius\Ux\Twig\Extension;
 
 use Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
 use Symfony\Component\PropertyAccess\PropertyAccess;
