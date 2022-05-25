@@ -1,0 +1,15 @@
+{
+    "name": "loic425/sylius-ux",
+    "description": "Sylius UX package",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "symfony/http-kernel": "^5.4 || ^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sylius\\Ux\\": "src/"
+        }
+    }
+}
