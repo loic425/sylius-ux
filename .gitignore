@@ -1,2 +1,5 @@
 /vendor
 composer.lock
+
+/tests/Application/var
+/tests/Application/.env.*.local

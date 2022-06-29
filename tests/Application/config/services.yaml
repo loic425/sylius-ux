@@ -1,0 +1,11 @@
+parameters:
+    locale: en
+
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Tests\Sylius\Ux\Application\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
