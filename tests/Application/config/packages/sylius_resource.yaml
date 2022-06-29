@@ -1,0 +1,7 @@
+sylius_resource:
+    mapping:
+        paths: ['%kernel.project_dir%/src/Entity']
+    resources:
+        app.book:
+            classes:
+                model: Tests\Sylius\Ux\Application\Entity\Book

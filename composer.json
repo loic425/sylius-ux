@@ -5,6 +5,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
+        "pagerfanta/doctrine-orm-adapter": "^3.6",
         "symfony/dependency-injection": "^5.4 || ^6.0",
         "symfony/http-kernel": "^5.4 || ^6.0",
         "symfony/property-access": "^5.4 || ^6.0",
@@ -12,16 +13,24 @@
     },
     "require-dev": {
         "doctrine/collections": "^1.6",
+        "doctrine/doctrine-bundle": "^2.7",
+        "doctrine/orm": "^2.12",
         "matthiasnoback/symfony-dependency-injection-test": "^4.3",
         "phpspec/phpspec": "^7.2",
         "phpunit/phpunit": "^9.5",
+        "sylius/grid-bundle": "^1.12@alpha",
+        "sylius/resource-bundle": "^1.10@alpha",
         "symfony/debug-bundle": "^5.4 || ^6.0",
         "symfony/dotenv": "^5.4 || ^6.0",
-        "symfony/framework-bundle": "^5.4 || ^6.0"
+        "symfony/framework-bundle": "^5.4 || ^6.0",
+        "symfony/serializer": "^5.4 || ^6.0",
+        "symfony/twig-bundle": "^5.4 || ^6.0"
     },
     "autoload": {
         "psr-4": {
-            "Sylius\\Ux\\": "src/"
+            "Sylius\\Ux\\": "src/",
+            "Sylius\\Ux\\Core\\Symfony\\Bundle\\": "src/Core/Symfony/Bundle/src",
+            "Sylius\\Ux\\Twig\\Symfony\\Bundle\\": "src/Twig/Symfony/Bundle/src"
         }
     },
     "autoload-dev": {
@@ -34,8 +43,7 @@
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
-            "symfony/flex": true,
-            "symfony/runtime": true
+            "symfony/flex": true
         },
         "sort-packages": true
     }
