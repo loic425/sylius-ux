@@ -2,21 +2,6 @@
 
 {% block content %}
     <h1>Books</h1>
-    <table>
-        <thead>
-        <tr>
-            <td>ID</td>
-            <td>Title</td>
-            <td>Author</td>
-        </tr>
-        </thead>
-        <tbody>
-        {% for book in resources.data %}
-            <tr>
-                <td>{{ book.id }}</td>
-                <td>{{ book.title }}</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+
+    {{ sylius_grid_render(resources, '@SyliusTwig/semantic_ui/grid/_default.html.twig') }}
 {% endblock %}
