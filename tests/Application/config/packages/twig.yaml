@@ -1,0 +1,3 @@
+twig:
+    globals:
+        environment: '%kernel.environment%'
