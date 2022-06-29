@@ -11,13 +11,12 @@
 
 declare(strict_types=1);
 
-namespace spec\Sylius\Ux\Twig\Extension;
+namespace spec\Sylius\Ux\Core\Twig\Extension;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\PropertyAccess\Exception\NoSuchPropertyException;
-use Tests\Sylius\Ux\Dummy\SampleInterface;
 use Twig\Extension\ExtensionInterface;
 use Twig\TwigFunction;
 

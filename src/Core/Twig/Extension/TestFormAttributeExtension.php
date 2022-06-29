@@ -11,14 +11,14 @@
 
 declare(strict_types=1);
 
-namespace Sylius\Ux\Twig\Extension;
+namespace Sylius\Ux\Core\Twig\Extension;
 
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 
-final class TestHtmlAttributeExtension extends AbstractExtension
+final class TestFormAttributeExtension extends AbstractExtension
 {
-    public function __construct(private string $env)
+    public function __construct(private string $environment)
     {
     }
 
@@ -29,13 +29,13 @@ final class TestHtmlAttributeExtension extends AbstractExtension
     {
         return [
             new TwigFunction(
-                'sylius_test_html_attribute',
-                function (string $name, ?string $value = null): string {
-                    if (str_starts_with($this->env, 'test')) {
-                        return sprintf('data-test-%s="%s"', $name, (string) $value);
+                'sylius_test_form_attribute',
+                function (string $name, ?string $value = null): array {
+                    if (str_starts_with($this->environment, 'test')) {
+                        return ['attr' => ['data-test-' . $name => (string) $value]];
                     }
 
-                    return '';
+                    return [];
                 },
                 ['is_safe' => ['html']]
             ),
