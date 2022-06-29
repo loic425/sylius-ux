@@ -12,7 +12,12 @@
     },
     "require-dev": {
         "doctrine/collections": "^1.6",
-        "phpspec/phpspec": "^7.2"
+        "matthiasnoback/symfony-dependency-injection-test": "^4.3",
+        "phpspec/phpspec": "^7.2",
+        "phpunit/phpunit": "^9.5",
+        "symfony/debug-bundle": "^6.1",
+        "symfony/dotenv": "^6.1",
+        "symfony/framework-bundle": "^5.4 || ^6.0"
     },
     "autoload": {
         "psr-4": {
@@ -22,7 +27,8 @@
     "autoload-dev": {
         "psr-4": {
             "spec\\Sylius\\Ux\\": "spec/",
-            "Tests\\Sylius\\Ux\\": "tests/"
+            "Tests\\Sylius\\Ux\\": "tests/",
+            "Tests\\Sylius\\Ux\\Application\\": "tests/Application/src"
         }
     },
     "config": {
