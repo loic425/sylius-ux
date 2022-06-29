@@ -1,6 +1,6 @@
 {
-    "name": "loic425/sylius-ux-twig",
-    "description": "Sylius UX Twig package",
+    "name": "loic425/sylius-ux-core",
+    "description": "Sylius UX Core package",
     "type": "library",
     "license": "MIT",
     "require": {
@@ -10,13 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sylius\\Ux\\": "./"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "spec\\Sylius\\Ux\\": "spec/",
-            "Tests\\Sylius\\Ux\\": "tests/"
+            "Sylius\\Ux\\Core": "./"
         }
     },
     "config": {
