@@ -1,0 +1,4 @@
+sylius_grid:
+    templates:
+        filter:
+            string: "@SyliusTwig/semantic_ui/grid/filter/string.html.twig"
