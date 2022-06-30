@@ -11,5 +11,6 @@ return [
     Sylius\Bundle\GridBundle\SyliusGridBundle::class => ['all' => true],
     BabDev\PagerfantaBundle\BabDevPagerfantaBundle::class => ['all' => true],
     Sylius\Ux\Bootstrap\Symfony\Bundle\SyliusUxBootstrapBundle::class => ['all' => true],
-    Sylius\Ux\SemanticUi\Symfony\Bundle\SyliusUxSemanticUiBundle::class => ['all' => true],
+    Sylius\Ux\SemanticUi\Core\Symfony\Bundle\SyliusUxSemanticUiBundle::class => ['all' => true],
+    Sylius\Ux\SemanticUi\Grid\Symfony\Bundle\SyliusUxSemanticUiGridBundle::class => ['all' => true],
 ];

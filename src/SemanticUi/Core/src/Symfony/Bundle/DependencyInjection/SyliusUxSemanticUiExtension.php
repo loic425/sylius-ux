@@ -1,6 +1,6 @@
 <?php
 
-namespace Sylius\Ux\SemanticUi\Symfony\Bundle\DependencyInjection;
+namespace Sylius\Ux\SemanticUi\Core\Symfony\Bundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
@@ -21,4 +21,3 @@ class SyliusUxSemanticUiExtension extends Extension implements PrependExtensionI
     {
     }
 }
-
