@@ -34,7 +34,7 @@
             "Sylius\\Ux\\Core\\Symfony\\Bundle\\": "src/Core/Symfony/Bundle/src",
             "Sylius\\Ux\\SemanticUi\\Core\\": "src/SemanticUi/Core/src",
             "Sylius\\Ux\\SemanticUi\\Grid\\": "src/SemanticUi/Grid/src",
-            "Sylius\\Ux\\Bootstrap\\": "src/Bootstrap/src"
+            "Sylius\\Ux\\Bootstrap\\Grid\\": "src/Bootstrap/Grid/src"
         }
     },
     "autoload-dev": {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Sylius\Ux\Bootstrap\Symfony\Bundle\DependencyInjection;
+namespace Sylius\Ux\Bootstrap\Grid\Symfony\Bundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 
-class SyliusUxBootstrapExtension extends Extension implements PrependExtensionInterface
+class SyliusUxBootstrapGridExtension extends Extension implements PrependExtensionInterface
 {
     public function prepend(ContainerBuilder $container): void
     {
