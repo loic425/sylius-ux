@@ -31,8 +31,9 @@
     "autoload": {
         "psr-4": {
             "Sylius\\Ux\\": "src/",
-            "Sylius\\Ux\\Core\\Symfony\\Bundle\\": "src/Core/Symfony/Bundle/src",
+            "Sylius\\Ux\\Core\\": "src/Core/src",
             "Sylius\\Ux\\SemanticUi\\Core\\": "src/SemanticUi/Core/src",
+            "Sylius\\Ux\\SemanticUi\\Crud\\": "src/SemanticUi/Crud/src",
             "Sylius\\Ux\\SemanticUi\\Grid\\": "src/SemanticUi/Grid/src",
             "Sylius\\Ux\\Bootstrap\\Core\\": "src/Bootstrap/Core/src",
             "Sylius\\Ux\\Bootstrap\\Grid\\": "src/Bootstrap/Grid/src"

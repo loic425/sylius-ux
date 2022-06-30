@@ -1,0 +1,4 @@
+sylius:
+    ux:
+        filters: Filters
+        show: Show

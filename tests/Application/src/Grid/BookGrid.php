@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\Ux\Application\Grid;
 
+use Sylius\Bundle\GridBundle\Builder\Action\CreateAction;
+use Sylius\Bundle\GridBundle\Builder\ActionGroup\MainActionGroup;
 use Sylius\Bundle\GridBundle\Builder\Field\StringField;
 use Sylius\Bundle\GridBundle\Builder\Filter\StringFilter;
 use Sylius\Bundle\GridBundle\Builder\GridBuilderInterface;
@@ -34,6 +36,11 @@ final class BookGrid extends AbstractGrid implements ResourceAwareGridInterface
                 StringField::create('authorName')
                     ->setLabel('Author')
                     ->setSortable(true)
+            )
+            ->addActionGroup(
+                MainActionGroup::create(
+                    CreateAction::create(),
+                ),
             )
         ;
     }
