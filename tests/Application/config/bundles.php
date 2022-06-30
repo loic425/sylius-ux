@@ -10,4 +10,6 @@ return [
     Sylius\Bundle\ResourceBundle\SyliusResourceBundle::class => ['all' => true],
     Sylius\Bundle\GridBundle\SyliusGridBundle::class => ['all' => true],
     BabDev\PagerfantaBundle\BabDevPagerfantaBundle::class => ['all' => true],
+    Sylius\Ux\Bootstrap\Symfony\Bundle\SyliusUxBootstrapBundle::class => ['all' => true],
+    Sylius\Ux\SemanticUi\Symfony\Bundle\SyliusUxSemanticUiBundle::class => ['all' => true],
 ];
