@@ -1,0 +1,6 @@
+twig:
+    globals:
+        environment: '%kernel.environment%'
+    paths:
+        '%kernel.project_dir%/../../src/Twig/Bootstrap/templates': SyliusUx
+        '%kernel.project_dir%/../../src/Twig/SemanticUi/templates': SyliusUx

@@ -1,7 +1,7 @@
-{% extends 'layout.html.twig' %}
+{% extends environment ~ '/layout.html.twig' %}
 
 {% block content %}
     <h1>Books</h1>
 
-    {{ sylius_grid_render(resources, '@SyliusTwig/semantic_ui/grid/_default.html.twig') }}
+    {{ sylius_grid_render(resources, '@SyliusUx/' ~ environment ~ '/grid/_default.html.twig') }}
 {% endblock %}
