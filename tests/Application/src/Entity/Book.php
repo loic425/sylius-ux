@@ -11,6 +11,7 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 #[ORM\Entity]
 #[SyliusCrudRoutes(
     alias: 'app.book',
+    path: '{package}/books',
     templates: 'book',
     grid: 'app_book',
 )]

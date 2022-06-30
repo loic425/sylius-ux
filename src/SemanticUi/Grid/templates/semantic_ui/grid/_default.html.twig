@@ -15,7 +15,7 @@
         <div class="title {% if criteria is not null %}active{% endif %}">
             <i class="dropdown icon"></i>
             <i class="filter icon"></i>
-            {{ 'sylius.ux.filters'|trans }}
+            {{ 'sylius.ui.filters'|trans }}
         </div>
         <div class="content {% if criteria is not null %}active{% endif %}">
             <form method="get" action="{{ path }}" class="ui loadable form" novalidate>
@@ -36,25 +36,40 @@
 <div class="ui hidden divider"></div>
 <div class="sylius-grid-wrapper">
     <div class="sylius-grid-nav">
+        {% if data|length > 0 and definition.actionGroups.bulk is defined and definition.getEnabledActions('bulk')|length > 0 %}
+            <div class="sylius-grid-nav__bulk">
+                {% for action in definition.getEnabledActions('bulk') %}
+                    {{ sylius_grid_render_bulk_action(grid, action, null) }}
+                {% endfor %}
+            </div>
+        {% endif %}
         <div class="sylius-grid-nav__pagination">
             {{ pagination.simple(data) }}
         </div>
+        {% if definition.limits|length > 1 and data|length > min(definition.limits) %}
+            <div class="sylius-grid-nav__perpage">
+                <div class="ui fluid one menu sylius-paginate">
+                    {{ pagination.perPage(data, definition.limits) }}
+                </div>
+            </div>
+        {% endif %}
     </div>
+
     {% if data|length > 0 %}
-    <div class="ui segment spaceless sylius-grid-table-wrapper">
-        <table class="ui sortable stackable very basic celled table" {{ sylius_test_html_attribute('grid-table') }}>
-            <thead>
-            <tr>
-                {{ table.headers(grid, definition, app.request.attributes) }}
-            </tr>
-            </thead>
-            <tbody {{ sylius_test_html_attribute('grid-table-body') }}>
-            {% for row in data %}
-                {{ table.row(grid, definition, row) }}
-            {% endfor %}
-            </tbody>
-        </table>
-    </div>
+        <div class="ui segment spaceless sylius-grid-table-wrapper">
+            <table class="ui sortable stackable very basic celled table" {{ sylius_test_html_attribute('grid-table') }}>
+                <thead>
+                <tr>
+                    {{ table.headers(grid, definition, app.request.attributes) }}
+                </tr>
+                </thead>
+                <tbody {{ sylius_test_html_attribute('grid-table-body') }}>
+                {% for row in data %}
+                    {{ table.row(grid, definition, row) }}
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     {% else %}
         {{ messages.info('sylius.ui.no_results_to_display') }}
     {% endif %}

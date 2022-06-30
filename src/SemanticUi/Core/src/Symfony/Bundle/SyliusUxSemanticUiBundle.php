@@ -1,6 +1,6 @@
 <?php
 
-namespace Sylius\Ux\SemanticUi\Symfony\Bundle;
+namespace Sylius\Ux\SemanticUi\Core\Symfony\Bundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

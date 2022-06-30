@@ -2,4 +2,5 @@
 composer.lock
 
 /tests/Application/var
+/tests/Application/.env.local
 /tests/Application/.env.*.local

@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Component\Console\Input\ArgvInput;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\HttpFoundation\Request;
@@ -9,34 +11,30 @@ use Tests\Sylius\Ux\Application\Kernel;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 
-// The check is to ensure we don't use .env in production
-if (!isset($_SERVER['APP_ENV']) && !isset($_ENV['APP_ENV'])) {
-    if (!class_exists(Dotenv::class)) {
-        throw new \RuntimeException('APP_ENV environment variable is not defined. You need to define environment variables for configuration or add "symfony/dotenv" as a Composer dependency to load variables from a .env file.');
-    }
-
-    $envFile = file_exists(__DIR__ . '/../.env') ? __DIR__ . '/../.env' : __DIR__ . '/../.env.dist';
-    (new Dotenv())->load($envFile);
+if (!class_exists(Application::class)) {
+    throw new RuntimeException('You need to add "symfony/framework-bundle" as a Composer dependency.');
 }
 
-$env = $_SERVER['APP_ENV'] ?? $_ENV['APP_ENV'] ?? 'dev';
-$debug = (bool) ($_SERVER['APP_DEBUG'] ?? $_ENV['APP_DEBUG'] ?? ('prod' !== $env));
+$input = new ArgvInput();
+if (null !== $env = $input->getParameterOption(['--env', '-e'], null, true)) {
+    putenv('APP_ENV='.$_SERVER['APP_ENV'] = $_ENV['APP_ENV'] = $env);
+}
 
-if ($debug) {
+if ($input->hasParameterOption('--no-debug', true)) {
+    putenv('APP_DEBUG='.$_SERVER['APP_DEBUG'] = $_ENV['APP_DEBUG'] = '0');
+}
+
+require dirname(__DIR__).'/config/bootstrap.php';
+
+if ($_SERVER['APP_DEBUG']) {
     umask(0000);
 
-    Debug::enable();
+    if (class_exists(Debug::class)) {
+        Debug::enable();
+    }
 }
 
-if ($trustedProxies = $_SERVER['TRUSTED_PROXIES'] ?? false) {
-    Request::setTrustedProxies(explode(',', $trustedProxies), Request::HEADER_X_FORWARDED_ALL ^ Request::HEADER_X_FORWARDED_HOST);
-}
-
-if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? false) {
-    Request::setTrustedHosts(explode(',', $trustedHosts));
-}
-
-$kernel = new Kernel($env, $debug);
+$kernel = new Kernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();
