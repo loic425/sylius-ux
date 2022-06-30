@@ -14,5 +14,5 @@ return [
     Sylius\Ux\Bootstrap\Grid\SyliusUxBootstrapGridBundle::class => ['all' => true],
     Sylius\Ux\SemanticUi\Core\SyliusUxSemanticUiBundle::class => ['all' => true],
     Sylius\Ux\SemanticUi\Crud\SyliusUxSemanticUiCrudBundle::class => ['all' => true],
-    //Sylius\Ux\SemanticUi\Grid\SyliusUxSemanticUiGridBundle::class => ['all' => true],
+    Sylius\Ux\SemanticUi\Grid\SyliusUxSemanticUiGridBundle::class => ['all' => true],
 ];
