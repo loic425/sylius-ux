@@ -1,9 +1,0 @@
-{% set package = app.request.attributes.get('package') %}
-
-{% extends package ~ '/layout.html.twig' %}
-
-{% block content %}
-    <h1>Books</h1>
-
-    {{ sylius_grid_render(resources, '@SyliusUx/' ~ package ~ '/grid/_default.html.twig') }}
-{% endblock %}

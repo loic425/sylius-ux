@@ -1,0 +1,7 @@
+{% extends 'semantic_ui/layout.html.twig' %}
+
+{% block content %}
+    <h1>Books</h1>
+
+    {{ sylius_grid_render(resources, '@SyliusUx/semantic_ui/grid/_default.html.twig') }}
+{% endblock %}

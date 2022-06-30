@@ -1,0 +1,7 @@
+{% extends 'bootstrap/layout.html.twig' %}
+
+{% block content %}
+    <h1>Books</h1>
+
+    {{ sylius_grid_render(resources, '@SyliusUx/bootstrap/grid/_default.html.twig') }}
+{% endblock %}

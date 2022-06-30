@@ -1,4 +1,7 @@
 sylius:
-    ux:
+    ui:
+        actions: Actions
+        delete: Delete
+        edit: Edit
         filters: Filters
         show: Show

@@ -11,8 +11,16 @@ use Sylius\Component\Resource\Model\ResourceInterface;
 #[ORM\Entity]
 #[SyliusCrudRoutes(
     alias: 'app.book',
-    path: '{package}/books',
-    templates: 'book',
+    path: 'semantic_ui/books',
+    section: 'semantic_ui',
+    templates: 'semantic_ui/book',
+    grid: 'app_book',
+)]
+#[SyliusCrudRoutes(
+    alias: 'app.book',
+    path: 'bootstrap/books',
+    section: 'bootstrap',
+    templates: 'bootstrap/book',
     grid: 'app_book',
 )]
 class Book implements ResourceInterface
