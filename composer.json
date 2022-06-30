@@ -31,8 +31,7 @@
     "autoload": {
         "psr-4": {
             "Sylius\\Ux\\": "src/",
-            "Sylius\\Ux\\Core\\Symfony\\Bundle\\": "src/Core/Symfony/Bundle/src",
-            "Sylius\\Ux\\Twig\\Symfony\\Bundle\\": "src/Twig/Symfony/Bundle/src"
+            "Sylius\\Ux\\Core\\Symfony\\Bundle\\": "src/Core/Symfony/Bundle/src"
         }
     },
     "autoload-dev": {

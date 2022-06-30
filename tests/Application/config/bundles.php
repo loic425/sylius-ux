@@ -7,7 +7,6 @@ return [
     FOS\RestBundle\FOSRestBundle::class => ['all' => true],
     Symfony\Bundle\TwigBundle\TwigBundle::class => ['all' => true],
     Sylius\Ux\Core\Symfony\Bundle\SyliusUxBundle::class => ['all' => true],
-    Sylius\Ux\Twig\Symfony\Bundle\SyliusTwigBundle::class => ['all' => true],
     Sylius\Bundle\ResourceBundle\SyliusResourceBundle::class => ['all' => true],
     Sylius\Bundle\GridBundle\SyliusGridBundle::class => ['all' => true],
     BabDev\PagerfantaBundle\BabDevPagerfantaBundle::class => ['all' => true],
