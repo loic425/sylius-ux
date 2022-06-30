@@ -25,6 +25,9 @@ class Book implements ResourceInterface
     #[ORM\Column(type: 'string')]
     private ?string $title = null;
 
+    #[ORM\Column(type: 'string')]
+    private ?string $authorName = null;
+
     public function getId(): int
     {
         return $this->id;
@@ -38,5 +41,15 @@ class Book implements ResourceInterface
     public function setTitle(?string $title): void
     {
         $this->title = $title;
+    }
+
+    public function getAuthorName(): ?string
+    {
+        return $this->authorName;
+    }
+
+    public function setAuthorName(?string $authorName): void
+    {
+        $this->authorName = $authorName;
     }
 }
