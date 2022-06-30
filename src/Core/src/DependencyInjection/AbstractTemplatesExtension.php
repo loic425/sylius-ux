@@ -10,7 +10,7 @@ abstract class AbstractTemplatesExtension extends Extension implements PrependEx
 {
     public function prepend(ContainerBuilder $container): void
     {
-        $templatesPath = $this->getTemplatesDir();
+        $templatesPath = static::getTemplatesDir();
 
         $container->prependExtensionConfig('twig', [
             'paths' => [$templatesPath => 'SyliusUx',

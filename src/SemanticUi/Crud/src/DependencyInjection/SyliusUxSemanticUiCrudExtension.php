@@ -6,7 +6,7 @@ use Sylius\Ux\Core\DependencyInjection\AbstractTemplatesExtension;
 
 class SyliusUxSemanticUiCrudExtension extends AbstractTemplatesExtension
 {
-    public function getTemplatesDir(): string
+    public static function getTemplatesDir(): string
     {
         return \dirname(__FILE__, 3) . '/templates';
     }

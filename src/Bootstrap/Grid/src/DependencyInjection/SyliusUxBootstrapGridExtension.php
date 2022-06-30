@@ -8,7 +8,7 @@ use Sylius\Ux\Core\DependencyInjection\AbstractTemplatesExtension;
 
 final class SyliusUxBootstrapGridExtension extends AbstractTemplatesExtension
 {
-    public function getTemplatesDir(): string
+    public static function getTemplatesDir(): string
     {
         return \dirname(__FILE__, 3) . '/templates';
     }

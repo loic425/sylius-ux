@@ -6,5 +6,5 @@ namespace Sylius\Ux\Core\DependencyInjection;
 
 interface TemplatesExtensionInterface
 {
-    public function getTemplatesDir(): string;
+    public static function getTemplatesDir(): string;
 }
