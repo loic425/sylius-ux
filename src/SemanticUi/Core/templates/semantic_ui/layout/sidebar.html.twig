@@ -13,10 +13,8 @@
     {% endblock %}
 
     {% block stylesheets %}
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+{#        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">#}
+        <link rel="stylesheet" type="text/css" href="https://demo.sylius.com/assets/shop/css/style.css">
     {% endblock %}
 </head>
 
@@ -56,6 +54,9 @@
 {% include '@SyliusUx/semantic_ui/modal/_confirmation.html.twig' %}
 
 {% block javascripts %}
+{#    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>#}
+{#    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>#}
+    <script src="https://demo.sylius.com/assets/shop/js/app.js"></script>
 {% endblock %}
 </body>
 </html>
