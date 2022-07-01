@@ -1,16 +1,17 @@
 {
-    "name": "loic425/sylius-ux-core",
-    "description": "Sylius UX Core package",
+    "name": "loic425/sylius-ux-semantic-ui-core",
+    "description": "Sylius UX Semantic UI package",
     "type": "library",
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "symfony/property-access": "^5.4 || ^6.0",
+        "symfony/dependency-injection": "^5.4 || ^6.0",
+        "symfony/http-kernel": "^5.4 || ^6.0",
         "twig/twig": "^3.4"
     },
     "autoload": {
         "psr-4": {
-            "Sylius\\Ux\\Core": "./src"
+            "Sylius\\Ux\\SemanticUi\\Core\\": "./src"
         }
     },
     "config": {
