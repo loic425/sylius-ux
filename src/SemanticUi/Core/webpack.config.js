@@ -20,11 +20,11 @@ Encore
     })
 
     // copy flag images for country type
-    .copyFiles({
-        from: './assets/images/flags/',
-        to: 'images/flags/[path][name].[ext]',
-        pattern: /\.png$/
-    })
+    // .copyFiles({
+    //     from: './assets/images/flags/',
+    //     to: 'images/flags/[path][name].[ext]',
+    //     pattern: /\.png$/
+    // })
 
     .addPlugin(new WebpackRTLPlugin())
 
@@ -32,5 +32,6 @@ Encore
     .enableSassLoader((options) => {
         options.additionalData = '@import "~semantic-ui-css/semantic.min.css";';
     })
+    .autoProvidejQuery()
 
 module.exports = Encore.getWebpackConfig();

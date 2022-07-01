@@ -13,8 +13,6 @@
     {% endblock %}
 
     {% block stylesheets %}
-{#        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">#}
-{#        <link rel="stylesheet" type="text/css" href="https://demo.sylius.com/assets/shop/css/style.css">#}
         <link rel="stylesheet" href="{{ asset('bundles/syliusuxsemanticui/app.css') }}">
     {% endblock %}
 </head>
@@ -55,9 +53,7 @@
 {% include '@SyliusUi/semantic_ui/modal/_confirmation.html.twig' %}
 
 {% block javascripts %}
-{#    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>#}
-{#    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>#}
-    <script src="https://demo.sylius.com/assets/shop/js/app.js"></script>
+    <script src="{{ asset('bundles/syliusuxsemanticui/app.js') }}"></script>
 {% endblock %}
 </body>
 </html>
