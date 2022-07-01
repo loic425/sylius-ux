@@ -4,12 +4,17 @@ sylius:
         administration: Administration
         cancel: Cancel
         clear_filters: Clear filters
+        contains: Contains
         create: Create
         delete: Delete
         edit: Edit
+        empty: Empty
+        equal: Equal
         filter: Filter
         filters: Filters
+        in: In
         new: New
+        not_contains: Not contains
         save_changes: Save changes
         show: Show
         value: Value

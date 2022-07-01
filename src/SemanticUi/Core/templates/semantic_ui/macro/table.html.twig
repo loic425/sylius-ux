@@ -1,5 +1,5 @@
 {% macro headers(grid, definition, requestAttributes) %}
-    {% import '@SyliusUx/semantic_ui/macro/sorting.html.twig' as sorting %}
+    {% import '@SyliusUi/semantic_ui/macro/sorting.html.twig' as sorting %}
 
     {% if definition.actionGroups.bulk is defined and definition.getEnabledActions('bulk')|length > 0 %}
         <th class="center aligned">

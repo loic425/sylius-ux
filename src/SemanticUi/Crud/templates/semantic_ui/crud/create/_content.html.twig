@@ -7,7 +7,7 @@
         {{ form_widget(form) }}
     {% endif %}
 
-    {% include '@SyliusUx/semantic_ui/form/buttons/_create.html.twig' with {'paths': {'cancel': path(configuration.getRouteName('index'), configuration.vars.route.parameters|default({}))}} %}
+    {% include '@SyliusUi/semantic_ui/form/buttons/_create.html.twig' with {'paths': {'cancel': path(configuration.getRouteName('index'), configuration.vars.route.parameters|default({}))}} %}
 
     {{ form_end(form, {'render_rest': false}) }}
 </div>
