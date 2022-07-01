@@ -1,0 +1,12 @@
+{% extends '@SyliusUx/semantic_ui/layout/sidebar.html.twig' %}
+
+{% set header = configuration.vars.header|default(metadata.applicationName~'.ui.new_'~metadata.name) %}
+
+{% block title %}{{ header|trans }} {{ parent() }}{% endblock %}
+
+{% form_theme form '@SyliusUx/semantic_ui/form/theme.html.twig' %}
+
+{% block content %}
+    {% include '@SyliusUx/semantic_ui/crud/create/_header.html.twig' %}
+    {% include '@SyliusUx/semantic_ui/crud/create/_content.html.twig' %}
+{% endblock %}

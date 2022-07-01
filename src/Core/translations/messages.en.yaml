@@ -1,7 +1,15 @@
 sylius:
     ui:
         actions: Actions
+        administration: Administration
+        cancel: Cancel
+        clear_filters: Clear filters
+        create: Create
         delete: Delete
         edit: Edit
+        filter: Filter
         filters: Filters
+        new: New
+        save_changes: Save changes
         show: Show
+        value: Value
