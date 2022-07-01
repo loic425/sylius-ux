@@ -17,4 +17,5 @@ sylius:
         not_contains: Not contains
         save_changes: Save changes
         show: Show
+        search: Search
         value: Value
