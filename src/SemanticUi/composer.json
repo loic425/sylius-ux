@@ -1,0 +1,25 @@
+{
+    "name": "loic425/sylius-semantic-ui",
+    "description": "Sylius Semantic UI package",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^8.0",
+        "symfony/dependency-injection": "^5.4 || ^6.0",
+        "symfony/http-kernel": "^5.4 || ^6.0",
+        "twig/twig": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sylius\\SemanticUi\\": "./src"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
+        "sort-packages": true
+    }
+}
