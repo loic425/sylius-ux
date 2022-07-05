@@ -1,10 +1,10 @@
 <?php
 
-namespace Sylius\Bootstrap;
+namespace Sylius\Ux\Bootstrap;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SyliusBootstrapBundle extends Bundle
+class SyliusUxBootstrapBundle extends Bundle
 {
     public function getPath(): string
     {

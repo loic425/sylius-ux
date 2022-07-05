@@ -1,10 +1,10 @@
-{% import '@SyliusSemanticUi/macro/headers.html.twig' as headers %}
+{% import '@SyliusUxSemanticUi/macro/headers.html.twig' as headers %}
 
 <div class="ui stackable two column grid">
     <div class="column">
         {{ headers.default(header|trans, configuration.vars.icon|default('list'), configuration.vars.subheader|default(null)|trans) }}
 
-        {% include configuration.vars.templates.breadcrumb|default('@SyliusSemanticUi/crud/index/_breadcrumb.html.twig') %}
+        {% include configuration.vars.templates.breadcrumb|default('@SyliusUxSemanticUi/crud/index/_breadcrumb.html.twig') %}
     </div>
     <div class="middle aligned column">
         <div class="ui right floated buttons">

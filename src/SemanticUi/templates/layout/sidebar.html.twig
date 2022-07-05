@@ -30,7 +30,7 @@
     <div class="full height" id="wrapper">
         <div id="content">
             {% block flash_messages %}
-                {% include '@SyliusSemanticUi/_flashes.html.twig' %}
+                {% include '@SyliusUxSemanticUi/_flashes.html.twig' %}
             {% endblock %}
 
             {% block pre_content %}
@@ -50,7 +50,7 @@
     </div>
 </div>
 
-{% include '@SyliusSemanticUi/modal/_confirmation.html.twig' %}
+{% include '@SyliusUxSemanticUi/modal/_confirmation.html.twig' %}
 
 {% block javascripts %}
     <script src="{{ asset('bundles/syliussemanticui/app.js') }}"></script>

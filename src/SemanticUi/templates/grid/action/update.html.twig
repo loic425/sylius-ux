@@ -1,4 +1,4 @@
-{% import '@SyliusSemanticUi/macro/buttons.html.twig' as buttons %}
+{% import '@SyliusUxSemanticUi/macro/buttons.html.twig' as buttons %}
 
 {% set path = options.link.url|default(path(options.link.route|default(grid.requestConfiguration.getRouteName('update')), options.link.parameters|default({'id': data.id}))) %}
 

@@ -13,7 +13,7 @@ use Sylius\Component\Resource\Model\ResourceInterface;
     alias: 'app.book',
     path: 'admin/semantic_ui/books',
     section: 'semantic_ui',
-    templates: '@SyliusSemanticUi/crud',
+    templates: '@SyliusUxSemanticUi/crud',
     grid: 'app_book',
 )]
 #[SyliusCrudRoutes(

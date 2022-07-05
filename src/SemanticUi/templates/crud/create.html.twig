@@ -1,12 +1,12 @@
-{% extends '@SyliusSemanticUi/layout.html.twig' %}
+{% extends '@SyliusUxSemanticUi/layout.html.twig' %}
 
 {% set header = configuration.vars.header|default(metadata.applicationName~'.ui.new_'~metadata.name) %}
 
 {% block title %}{{ header|trans }} {{ parent() }}{% endblock %}
 
-{% form_theme form '@SyliusSemanticUi/form/theme.html.twig' %}
+{% form_theme form '@SyliusUxSemanticUi/form/theme.html.twig' %}
 
 {% block content %}
-    {% include '@SyliusSemanticUi/crud/create/_header.html.twig' %}
-    {% include '@SyliusSemanticUi/crud/create/_content.html.twig' %}
+    {% include '@SyliusUxSemanticUi/crud/create/_header.html.twig' %}
+    {% include '@SyliusUxSemanticUi/crud/create/_content.html.twig' %}
 {% endblock %}

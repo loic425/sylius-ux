@@ -10,7 +10,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Sylius\\Bootstrap\\": "./src"
+            "Sylius\\Ux\\Bootstrap\\": "./src"
         }
     },
     "config": {

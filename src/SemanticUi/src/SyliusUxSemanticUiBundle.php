@@ -1,10 +1,10 @@
 <?php
 
-namespace Sylius\SemanticUi;
+namespace Sylius\Ux\SemanticUi;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class SyliusSemanticUiBundle extends Bundle
+class SyliusUxSemanticUiBundle extends Bundle
 {
     public function getPath(): string
     {

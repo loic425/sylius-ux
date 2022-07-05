@@ -32,8 +32,8 @@
     "autoload": {
         "psr-4": {
             "Sylius\\Ux\\Core\\": "src/Core/src",
-            "Sylius\\SemanticUi\\": "src/SemanticUi/src",
-            "Sylius\\Bootstrap\\": "src/Bootstrap/src"
+            "Sylius\\Ux\\SemanticUi\\": "src/SemanticUi/src",
+            "Sylius\\Ux\\Bootstrap\\": "src/Bootstrap/src"
         }
     },
     "autoload-dev": {

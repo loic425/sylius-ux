@@ -1,4 +1,4 @@
-{% extends '@SyliusSemanticUi/layout.html.twig' %}
+{% extends '@SyliusUxSemanticUi/layout.html.twig' %}
 
 {% set definition = resources.definition %}
 {% set data = resources.data %}
@@ -8,6 +8,6 @@
 {% block title %}{{ header|trans }} {{ parent() }}{% endblock %}
 
 {% block content %}
-    {% include '@SyliusSemanticUi/crud/index/_header.html.twig' %}
-    {% include '@SyliusSemanticUi/crud/index/_content.html.twig' %}
+    {% include '@SyliusUxSemanticUi/crud/index/_header.html.twig' %}
+    {% include '@SyliusUxSemanticUi/crud/index/_content.html.twig' %}
 {% endblock %}
