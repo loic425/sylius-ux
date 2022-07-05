@@ -6,6 +6,7 @@
     "require": {
         "php": "^8.0",
         "pagerfanta/doctrine-orm-adapter": "^3.6",
+        "pagerfanta/twig": "^3.6",
         "symfony/dependency-injection": "^5.4 || ^6.0",
         "symfony/http-kernel": "^5.4 || ^6.0",
         "symfony/property-access": "^5.4 || ^6.0",
@@ -17,7 +18,6 @@
         "doctrine/orm": "^2.12",
         "knplabs/knp-menu-bundle": "^3.2",
         "matthiasnoback/symfony-dependency-injection-test": "^4.3",
-        "pagerfanta/twig": "^3.6",
         "phpspec/phpspec": "^7.2",
         "phpunit/phpunit": "^9.5",
         "sylius/grid-bundle": "^1.12@alpha",
