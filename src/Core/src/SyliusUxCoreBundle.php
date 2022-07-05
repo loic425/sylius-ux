@@ -6,7 +6,7 @@ namespace Sylius\Ux\Core;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-final class SyliusUxBundle extends Bundle
+final class SyliusUxCoreBundle extends Bundle
 {
     public function getPath(): string
     {
