@@ -1,3 +1,8 @@
+# Customizing menu
+
+Add a new AdminMenuBuilder service.
+
+```php
 <?php
 
 declare(strict_types=1);
@@ -30,8 +35,23 @@ final class AdminMenuBuilder implements MenuBuilderInterface
             ->setLabel('app.ui.library')
         ;
 
-        $library->addChild('backend_pet', ['route' => 'app_semantic_ui_book_index'])
+        $library->addChild('backend_book', ['route' => 'app_backend_book_index'])
             ->setLabel('app.ui.books')
             ->setLabelAttribute('icon', 'book');
     }
 }
+
+```
+
+And declare the menu in services.
+
+```yaml
+# services.yaml
+
+services:
+    # [...]
+    
+    App\Menu\AdminMenuBuilder:
+        decorates: 'sylius.ux.menu.admin'
+
+```
