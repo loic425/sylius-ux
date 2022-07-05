@@ -4,15 +4,10 @@
 <!-- templates/bundles/SyliusUxSemanticUiBundle/layout.html.twig -->
 {% extends '@!SyliusUxSemanticUiBundle/layout.html.twig' %}
 
-{% block sidebar %}
-    <a class="item" href="/admin" style="padding: 0 0;">
-        <div class="sidebar-logo">
-            <img src="https://placeholderlogo.com/img/placeholder-logo-4.png" class="ui fluid image">
-        </div>
-    </a>
-
-    <!--You can use Knp Menu bundle to render the menu -->
-    {{ knp_menu_render('app.admin.main', {'template': '@SyliusUxSemanticUi/menu/sidebar.html.twig', 'currentClass': 'active'}) }}
+{% block logo %}
+    <div style="max-width: 200px; margin:0 auto;">
+        <img src="https://demo.monofony.com/assets/backend/img/admin-logo.svg" class="ui fluid image">
+    </div>
 {% endblock %}
 
 {% block stylesheets %}

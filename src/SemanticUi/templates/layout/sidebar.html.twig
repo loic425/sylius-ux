@@ -20,6 +20,14 @@
 <body class="pushable">
 <div class="ui sidebar vertical inverted menu visible left" id="sidebar">
     {% block sidebar %}
+        <a class="item" href="/admin">
+            {% block logo %}
+                <div style="max-width: 90px; margin:0 auto;">
+                    <img src="https://demo.sylius.com/assets/admin/img/admin-logo.svg" width="500px" class="ui fluid image">
+                </div>
+            {% endblock %}
+        </a>
+        {{ knp_menu_render('sylius.ux.menu.admin', {'template': '@SyliusUxSemanticUi/menu/sidebar.html.twig', 'currentClass': 'active'}) }}
     {% endblock %}
 </div>
 <div class="ui borderless fixed menu">
