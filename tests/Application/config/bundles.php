@@ -12,4 +12,5 @@ return [
     BabDev\PagerfantaBundle\BabDevPagerfantaBundle::class => ['all' => true],
     Sylius\Ux\SemanticUi\SyliusUxSemanticUiBundle::class => ['all' => true],
     Sylius\Ux\Bootstrap\SyliusUxBootstrapBundle::class => ['all' => true],
+    Knp\Bundle\MenuBundle\KnpMenuBundle::class => ['all' => true],
 ];

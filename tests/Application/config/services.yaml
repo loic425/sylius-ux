@@ -9,3 +9,6 @@ services:
     Tests\Sylius\Ux\Application\:
         resource: '../src/*'
         exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    Tests\Sylius\Ux\Application\Menu\AdminMenuBuilder:
+        tags: [ {name: 'knp_menu.menu_builder', method: 'createMenu', alias: 'app.admin.main'}]
