@@ -1,0 +1,5 @@
+index:
+    controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+    path: /admin
+    defaults:
+        template: 'index.html.twig'
