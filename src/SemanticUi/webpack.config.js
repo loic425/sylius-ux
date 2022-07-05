@@ -4,7 +4,7 @@ const WebpackRTLPlugin = require('webpack-rtl-plugin');
 Encore
     .setOutputPath('./public/')
     .setPublicPath('./')
-    .setManifestKeyPrefix('bundles/syliussemanticui')
+    .setManifestKeyPrefix('bundles/syliusuxsemanticui')
 
     .cleanupOutputBeforeBuild()
     .enableSassLoader()
