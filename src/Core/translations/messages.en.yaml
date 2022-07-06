@@ -2,8 +2,10 @@ sylius:
     ui:
         actions: Actions
         administration: Administration
+        are_your_sure_you_want_to_perform_this_action: Are you sure to perform this action?
         cancel: Cancel
         clear_filters: Clear filters
+        confirm_your_action: Confirm your action
         contains: Contains
         create: Create
         delete: Delete
@@ -13,9 +15,14 @@ sylius:
         filter: Filter
         filters: Filters
         in: In
+        info: Info
         new: New
+        no_label: No
+        no_results_to_display: No results to display
         not_contains: Not contains
         save_changes: Save changes
         show: Show
         search: Search
+        success: Success
         value: Value
+        yes_label: Yes
