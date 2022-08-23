@@ -1,0 +1,6 @@
+<div class="row mt-4">
+    <div class="col-xl-9">
+        <button class="btn btn-success" type="submit" id="sylius_save_changes_button"><i class="bi bi-check"></i> {{ 'sylius.ui.save_changes'|trans }}</button>
+        {% include '@SyliusUxBootstrap/form/buttons/_cancel.html.twig' with {'path': paths.cancel|default(null)} %}
+    </div>
+</div>

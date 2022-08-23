@@ -1,0 +1,11 @@
+<div class="row mt-4">
+	{% if configuration.metadata.name == "product" %}
+		<div class="col-xl-3"></div>
+	{% endif %}
+	<div class="col-xl-9">
+		<button class="btn btn-success" type="submit">
+			<i class="bi bi-plus"></i>
+			{{- 'sylius.ui.create'|trans -}}</button>
+		{% include '@SyliusUxBootstrap/form/buttons/_cancel.html.twig' with {'path': paths.cancel|default(null)} %}
+	</div>
+</div>

@@ -1,0 +1,14 @@
+{% extends '@SyliusUxBootstrap/layout.html.twig' %}
+
+{% import '@SyliusUxBootstrap/macro/buttons.html.twig' as buttons %}
+
+{% set header = configuration.vars.header|default(metadata.applicationName~'.ui.edit_'~metadata.name) %}
+
+{% block title %}{{ header|trans }} {{ parent() }}{% endblock %}
+
+{% form_theme form '@SyliusUxBootstrap/form/theme.html.twig' %}
+
+{% block content %}
+    {% include '@SyliusUxSemanticUi/crud/update/_header.html.twig' %}
+    {% include '@SyliusUxBootstrap/crud/update/_content.html.twig' %}
+{% endblock %}

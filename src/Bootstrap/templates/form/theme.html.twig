@@ -1,0 +1,153 @@
+{% extends 'form_div_layout.html.twig' %}
+
+{% block form_row -%}
+    <div class="{% if required %}required {% endif %}{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
+        {{- form_label(form, null, {'label_attr': {'class': 'form-label'}}) -}}
+        {{- form_widget(form,
+            (not compound)
+                ? {'attr': {'class': 'form-control'}}
+                : form.vars.name != "actions"
+                    ? {'attr': {'class': 'space-y-3'}}
+                    : {}
+        )-}}
+        {{- form_help(form) -}}
+        {{- form_errors(form) -}}
+    </div>
+{%- endblock form_row %}
+
+{% block datetime_widget -%}
+    <div class="input-group">
+        <input type="date" class="form-control"
+            value="{{
+                value.date.year
+                ? "#{value.date.year}-#{value.date.month}-#{value.date.day}"|date("Y-m-d")
+                : ""
+            }}"
+        />
+        <input type="time" class="form-control"
+            value="{{
+                value.time.hour
+                ? "#{value.time.hour}:#{value.time.minute}:#{value.time.second}"|date("H:i:s")
+                : ""
+            }}"
+        />
+    </div>
+{%- endblock datetime_widget %}
+
+{%- block form_errors -%}
+    {%- if errors|length > 0 -%}
+        {%- for error in errors -%}
+            <div class="ui red {% if form.parent is not empty %}pointing {% endif %}label sylius-validation-error" {{ sylius_test_html_attribute('validation-error') }} {% if form.parent is empty %} style="margin-bottom: 10px;"{% endif %}>
+                {{ error.message }}
+            </div>
+        {%- endfor -%}
+    {%- endif -%}
+{%- endblock form_errors -%}
+
+{% block checkbox_row -%}
+    <div class="{% if required %}required {% endif %}field{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
+        <div class="form-check form-switch form-switch-md d-flex align-items-start gap-2">
+            {{- form_widget(form,  {'attr': {'class': 'form-check-input mt-0'}}) -}}
+            {{- form_label(form, null, {'label_attr': {'class': 'form-check-label'}}) -}}
+            {{- form_errors(form) -}}
+        </div>
+    </div>
+{%- endblock checkbox_row %}
+
+{% block radio_row -%}
+    <div class="form-check{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
+        <div>
+            {{- form_widget(form, {attr: {class: "form-check-input"}}) -}}
+            {{- form_label(form, null, {'label_attr': {'class': 'form-check-label'}}) -}}
+            {{- form_errors(form) -}}
+        </div>
+    </div>
+
+{%- endblock radio_row %}
+
+{% block money_widget -%}
+    <div class="input-group">
+        <span class="input-group-text">€</span>
+        {{- form_widget(form) -}}
+    </div>
+{%- endblock money_widget %}
+
+{% block choice_row -%}
+    <div class="{% if required %}required {% endif %}field{% if (not compound or force_error|default(false)) and not valid %} error{% endif %}">
+        {{- form_label(form, null, {'label_attr': {'class': 'form-label'}}) -}}
+        {% set attr = attr|merge({'class': attr.class|default ~ compound ? 'form-control' : 'form-select'}) %}
+        {{- form_widget(form, {'attr': attr}) -}}
+        {{- form_errors(form) -}}
+    </div>
+{%- endblock choice_row %}
+
+{%- block choice_widget_expanded -%}
+    <div {{ block('widget_container_attributes') }}>
+        <div class="{% if required %}required {% endif %}">
+            {%- for child in form %}
+                    <div>
+                        {{- form_widget(child, sylius_test_form_attribute('option')|sylius_merge_recursive({'attr': {'class': 'form-check-input me-2'}})) -}}
+                        {{- form_label(child, null, {translation_domain: choice_translation_domain}) -}}
+                    </div>
+            {% endfor -%}
+        </div>
+    </div>
+{%- endblock choice_widget_expanded -%}
+
+{% block percent_widget -%}
+    <div class="input-group">
+        {{- form_widget(form) -}}
+         <span class="input-group-text" id="basic-addon1">%</span>
+    </div>
+{%- endblock percent_widget %}
+
+{% block collection_widget -%}
+    {% from '@SyliusResource/Macros/notification.html.twig' import error %}
+    {% import _self as self %}
+    {% set attr = attr|merge({'class': attr.class|default ~ ' controls collection-widget'}) %}
+    {% apply spaceless %}
+        <div data-form-type="collection" {{ block('widget_container_attributes') }}
+            {% if prototype is defined and allow_add %}
+                data-prototype='{{ self.collection_item(prototype, allow_delete, button_delete_label, prototype.vars.name)|e }}'
+                data-prototype-name='{{ prototype.vars.name }}'
+            {%- endif -%}
+        >
+            {{ error(form.vars.errors) }}
+
+            {% if prototypes|default is iterable %}
+                {% for key, subPrototype in prototypes %}
+                    <input type="hidden" data-form-prototype="{{ key }}"
+                           value="{{ self.collection_item(subPrototype, allow_delete, button_delete_label, subPrototype.vars.name)|e }}"
+                           data-subprototype-name="{{ subPrototype.vars.name }}"
+                    />
+                {% endfor %}
+            {% endif %}
+            <div data-form-collection="list">
+                {% for child in form %}
+                    {{ self.collection_item(child, allow_delete, button_delete_label, loop.index0) }}
+                {% endfor %}
+            </div>
+
+            {% if prototype is defined and allow_add %}
+                <a href="#" class="btn btn-primary" data-form-collection="add">
+                    <i class="bi bi-plus"></i>
+                    {{ button_add_label|trans }}
+                </a>
+            {% endif %}
+        </div>
+    {% endapply %}
+{%- endblock collection_widget %}
+
+{% macro collection_item(form, allow_delete, button_delete_label, index) %}
+    {% apply spaceless %}
+        <div data-form-collection="item" data-form-collection-index="{{ index }}">
+            {{ form_widget(form) }}
+            {% if allow_delete %}
+                <a href="#" data-form-collection="delete" class="btn btn-danger my-3">
+                    <i class="bi bi-trash"></i>
+                    {{ button_delete_label|trans }}
+                </a>
+            {% endif %}
+        </div>
+    {% endapply %}
+{% endmacro %}

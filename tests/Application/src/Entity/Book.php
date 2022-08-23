@@ -20,7 +20,7 @@ use Sylius\Component\Resource\Model\ResourceInterface;
     alias: 'app.book',
     path: 'admin/bootstrap/books',
     section: 'bootstrap',
-    templates: 'bootstrap/book',
+    templates: '@SyliusUxBootstrap/crud',
     grid: 'app_book',
 )]
 class Book implements ResourceInterface
