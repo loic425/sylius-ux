@@ -1,0 +1,28 @@
+{# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmation-modal">
+  Launch demo modal
+</button> #}
+
+<div class="modal fade" id="confirmation-modal" tabindex="-1" aria-labelledby="confirmation-modal-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="confirmation-modal-label">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            {{ 'sylius.ui.confirm_your_action'|trans }}
+        </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        {{ 'sylius.ui.are_your_sure_you_want_to_perform_this_action'|trans }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            {{ 'sylius.ui.no_label'|trans }}
+        </button>
+        <button id="confirmation-button" type="button" class="btn btn-success">
+            {{ 'sylius.ui.yes_label'|trans }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

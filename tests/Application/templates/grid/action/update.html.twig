@@ -1,0 +1,9 @@
+{% set namespace = null %}
+{% set sylius_attributes = app.request.attributes.get('_sylius', []) %}
+{% set section = sylius_attributes.section|default(null) %}
+
+{% if section == 'bootstrap' %}
+    {% set namespace = '@SyliusUxBootstrap' %}
+{% endif %}
+
+{% include namespace|default('@SyliusUxSemanticUi') ~ '/grid/action/update.html.twig' %}
