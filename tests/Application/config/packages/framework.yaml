@@ -5,3 +5,4 @@ framework:
     session:
         handler_id: ~
         storage_factory_id: session.storage.factory.mock_file
+    serializer: null
